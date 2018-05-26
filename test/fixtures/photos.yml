@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing_id: 
+  person_id: 
+
+two:
+  listing_id: 
+  person_id: 

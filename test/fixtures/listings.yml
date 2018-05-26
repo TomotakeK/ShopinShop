@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_type: MyString
+  shop_type: MyString
+  shop_size: MyString
+  address: MyString
+  listing_title: MyString
+  listing_content: MyText
+  price_type: MyString
+  active: false
+  user_id: 
+
+two:
+  item_type: MyString
+  shop_type: MyString
+  shop_size: MyString
+  address: MyString
+  listing_title: MyString
+  listing_content: MyText
+  price_type: MyString
+  active: false
+  user_id: 

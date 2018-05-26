@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShopinShop</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<!--flashにメッセージがあるとき。flashの略がf。f[0]はnoticef[1]は具体的なflashメッセージ-->
+<!--to_sでstring（文章）で表現、gsubは文字列を置き換えるメソッド（alertをerrorに）toastrに適応させるために文字列の置き換えが必要-->
+<% unless flash.empty? %>
+  	<script type="text/javascript">
+  			<% flash.each do |f| %>
+  				<% type = f[0].to_s.gsub('alert','error').gsub('notice','info') %>
+  				toastr['<%= type %>']('<%= f[1] %>')
+  			<% end %>
+  	</script>
+<% end %>
+</body>
+</html>

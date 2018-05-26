@@ -1,0 +1,55 @@
+<%= render 'partial/navbar' %>
+<div class="container">
+    <div class="col-md-3">
+        <!-- vertical-navbar -->
+        <%= render 'partial/verticalnavbar'%>
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <div class="text-center">
+                  <span style="font-size:24px;">基本データの編集</span>
+              </div>
+          </div>
+
+          <div class="panel-body">			
+					<!-- ここからフォーム -->
+					<%= form_for @listing do |f| %>
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+									<label>お店ジャンル</label>
+									<%= f.select :item_type, [["飲食・カフェ","飲食・カフェ"], ["飲食・その他","飲食・その他"], ["物販・食品","物販・食品"], ["物販・服飾雑貨","物販・服飾雑貨"], ["物販・その他","物販・その他"], ["サービス業","サービス業"], ["複合施設","複合施設"], ["その他","その他"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+								</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+									<label>貸出スペースについて</label>
+									<%= f.select :shop_type, [["ジャンル問わず","ジャンル問わず"], ["飲食希望","飲食希望"], ["物販希望","物販希望"], ["その他","その他"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+								</div>
+							</div>
+						</div>
+						<br>
+
+						<div class="row">
+							<div class="col-md-12 select">
+								<div class="form-group">
+									<label>貸出スペースの広さ</label>
+									<%= f.select :shop_size, [["10㎡未満","10㎡未満"], ["10~25㎡程度","10~25㎡程度"], ["25~50㎡程度","25~50㎡程度"], ["50㎡以上","50㎡以上"]], {prompt:"選択してください"}, {required: 'true', autofocus: 'true', class: 'form-control'} %>
+								</div>
+							</div>
+						</div>
+						<br>
+
+                  <div class="actions">
+                      <%= f.submit "更新", class: "btn btn-danger" %>
+                  </div>
+              <% end %>
+          </div>
+      </div>
+  </div>
+</div>
